@@ -1,0 +1,8 @@
+p, h1, h3, h4 {
+  display: inline-block;
+  margin: 0;
+}
+
+th {font-size: 24px;}
+
+p {font-size: 16px}
