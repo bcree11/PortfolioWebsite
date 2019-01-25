@@ -19,26 +19,22 @@ export default class Test extends Component{
   masonry
   withTextProtection
   style={{
-    columnCount: 3,
+    columnCount: 4,
     columnGap: '8db',
-    maxWidth: '90%'
+    maxWidth: '90%',
+    height: ''
   }}
 >
   {[
-    'https://material-components-web.appspot.com/images/photos/2x3/1.jpg',
-    'https://material-components-web.appspot.com/images/photos/2x3/2.jpg',
-    'https://material-components-web.appspot.com/images/photos/2x3/3.jpg',
-    'https://material-components-web.appspot.com/images/photos/2x3/4.jpg',
-    'https://material-components-web.appspot.com/images/photos/2x3/5.jpg',
-    'https://material-components-web.appspot.com/images/photos/2x3/6.jpg',
-    'https://material-components-web.appspot.com/images/photos/2x3/7.jpg',
-    'https://material-components-web.appspot.com/images/photos/2x3/8.jpg',
-    'https://material-components-web.appspot.com/images/photos/2x3/1.jpg',
+    {image: 'https://material-components-web.appspot.com/images/photos/2x3/1.jpg', text: 'Hello'},
+    {image: 'https://material-components-web.appspot.com/images/photos/2x3/2.jpg', text: 'Hola'},
+    {image: 'https://material-components-web.appspot.com/images/photos/2x3/3.jpg', text: 'What\'s Up'},
+    {image: 'https://material-components-web.appspot.com/images/photos/2x3/4.jpg', text: 'Yep'}
   ].map(src => (
-    <ImageListItem key={src} style={{ marginBottom: '16px' }}>
-      <ImageListImage src={src} />
+    <ImageListItem src={src.text} style={{ marginBottom: '16px' }}>
+      <ImageListImage src={src.image} style={{height: '33vh'}}/>
       <ImageListSupporting>
-        <ImageListLabel>Random</ImageListLabel>
+        <ImageListLabel>{src.text}</ImageListLabel>
       </ImageListSupporting>
     </ImageListItem>
   ))}

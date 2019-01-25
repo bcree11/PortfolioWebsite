@@ -22,7 +22,7 @@ export default class NavBar extends Component {
   render(){
     return(
       <div className="Navbar">
-        <TopAppBar fixed>
+        <TopAppBar fixed  style={navBarStyle}>
           <TopAppBarRow>
             <TopAppBarSection alignStart>
               <TopAppBarNavigationIcon icon="menu" />
@@ -47,8 +47,12 @@ export default class NavBar extends Component {
             </TopAppBarSection>
           </TopAppBarRow>
         </TopAppBar>
-        <TopAppBarFixedAdjust></TopAppBarFixedAdjust>
+        <TopAppBarFixedAdjust  style={navBarStyle}></TopAppBarFixedAdjust>
       </div>
     )
   }
+}
+
+let navBarStyle = {
+  height: '7vh',
 }

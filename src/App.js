@@ -11,7 +11,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <AboutMe/>
+        <PortfolioCard/>
+        <PortfolioCard/>
+
       </div>
 
     );
@@ -22,6 +24,7 @@ export default App;
 
 
 
+// <AboutMe/>
 // <NavBar/>
 // <PortfolioCard/>
 // <Footer/>
