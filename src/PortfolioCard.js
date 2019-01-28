@@ -11,7 +11,7 @@ import '@material/image-list/dist/mdc.image-list.css';
 import MediaQuery from 'react-responsive';
 
 
-export default class Test extends Component{
+export default class PortfolioCard extends Component{
   render(){
     return(
       <div>
@@ -26,15 +26,15 @@ export default class Test extends Component{
   }}
 >
   {[
-    {image: 'https://material-components-web.appspot.com/images/photos/2x3/1.jpg', text: 'Hello'},
-    {image: 'https://material-components-web.appspot.com/images/photos/2x3/2.jpg', text: 'Hola'},
-    {image: 'https://material-components-web.appspot.com/images/photos/2x3/3.jpg', text: 'What\'s Up'},
-    {image: 'https://material-components-web.appspot.com/images/photos/2x3/4.jpg', text: 'Yep'}
+    {image: 'https://material-components-web.appspot.com/images/photos/2x3/1.jpg', title: 'Tic Tac Toe',},
+    {image: 'https://material-components-web.appspot.com/images/photos/2x3/4.jpg', title: 'Christmas Present Hunt'},
+    {image: 'https://material-components-web.appspot.com/images/photos/2x3/2.jpg', title: 'Light Switch: Click Me!', click: this.props.lightSwitch},
+    {image: 'https://material-components-web.appspot.com/images/photos/2x3/3.jpg', title: 'Color Box: Click Me!'},
   ].map(src => (
-    <ImageListItem src={src.text} style={{ marginBottom: '16px' }}>
-      <ImageListImage src={src.image} style={{height: '33vh'}}/>
-      <ImageListSupporting>
-        <ImageListLabel>{src.text}</ImageListLabel>
+    <ImageListItem src={src.title} style={{ marginBottom: '16px' }}>
+      <ImageListImage src={src.image} onClick={src.click} style={{height: '33vh'}}/>
+      <ImageListSupporting style={labelStyle}>
+        <ImageListLabel>{src.title}</ImageListLabel>
       </ImageListSupporting>
     </ImageListItem>
   ))}
@@ -42,4 +42,9 @@ export default class Test extends Component{
 </div>
     )
   }
+}
+
+let labelStyle = {
+  display: 'flex',
+  justifyContent: 'center'
 }
