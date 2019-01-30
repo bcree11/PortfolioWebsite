@@ -12,25 +12,25 @@ class App extends Component {
     super(props)
     this.state = {
       light: 'Off',
-      backgroundColor: '#35364a'
+      backgroundColor: '#35364a',
     }
   }
 
-  LightSwitch(){
+  LightSwitch = () => {
     let {light, backgroundColor} = this.state
     light = light === 'Off' ? 'On' : 'Off'
-    backgroundColor = light === 'Off' ? '#35364a' : '#ffc22d'
+    backgroundColor = light === 'Off' ? '#35364a' : '#2EB5E5'
     this.setState({light: light, backgroundColor: backgroundColor})
   }
 
   render() {
-    let style = {
-      backgroundColor: `${this.state.backgroundColor}`
+    const style = {
+      backgroundColor: this.state.backgroundColor
     }
     return (
       <div style={style}>
         <AboutMe/>
-        <PortfolioCard lightSwitch={this.LightSwitch.bind(this)} light={this.state.light}/>
+        <PortfolioCard lightSwitch={this.LightSwitch} light={this.state.light}/>
       </div>
 
     );
